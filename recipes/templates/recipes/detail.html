@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block head %}
-    <link href="{% static 'website/css/style.css' %}" rel="stylesheet">
+<style>
+    .common-master-head {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+        url("/static/images/background5.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+</style>
 {% endblock %}
 
 {% block title %} {{ recipe.title }} {% endblock %}
@@ -20,7 +29,7 @@
         <div class="row py-2">
             <div class="col-md-8">
                 <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                    From the {{ recipe.category }}
+                    From the Firehouse
                 </h3>
 
                 <article class="blog-recipe mb-4">
@@ -31,13 +40,12 @@
                     <div class="content">
                         {{ recipe.content }}
                     </div>
-                </article><!-- /.blog-recipe -->
+                </article>
 
                 <nav aria-label="Pagination" class="blog-pagination">
                     <a class="btn btn-outline-primary" href="#">Older</a>
                     <a aria-disabled="true" class="btn btn-outline-secondary disabled" href="#" tabindex="-1">Newer</a>
                 </nav>
-
             </div>
 
             <div class="col-md-4">

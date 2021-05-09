@@ -1,4 +1,4 @@
-{% extends 'base_website.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}
     {{ setting.blogname }} | {{ setting.blogdescription }}
@@ -7,8 +7,8 @@
 {% block head %}
     <style>
         .master-head {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
-                url("/static/website/images/background4.jpg");
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("static/images/bg-main.jpg");
             background-size: cover;
             background-position: center;
         }

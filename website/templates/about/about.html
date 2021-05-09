@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block head %}
-<link href="{% static 'website/css/style.css' %}" rel="stylesheet">
-
 <style>
     .common-master-head {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-        url("/static/website/images/background3.jpg");
+        url("/static/images/background3.jpg");
         background-position: bottom;
         background-repeat: no-repeat;
         background-attachment: scroll;
@@ -37,7 +35,7 @@
         <div class="col-4">
             <img alt=""
                  class="bd-placeholder-img rounded-circle"
-                 src="{% static 'website/images/'  %}{{ post.image }}"
+                 src="{% static 'images/'  %}{{ post.image }}"
                  width="140">
             <h2 class="pt-4">{{ post.title }}</h2>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit." </p>

@@ -1,36 +1,38 @@
 {% load static %}
 <!--FEATURED PRODUCT STARTS-->
-<section id="gallery" class="featured-products-1">
+<section class="featured-products-1" id="gallery">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center pb-4">
-                <h2>Checkout Our Recipes</h2>
+                <h2>{{ home_recipe.title }}</h2>
                 <p class="lead">
-                    Per te vide delenit nonumes. Blandit sadipscing ex.
+                    {{ home_recipe.subtitle }}
                 </p>
             </div>
             {% for recipe in recipes %}
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
                 <div class="item">
-                    <img
-                        src="{% static 'website/images/' %}{{recipe.image_url}}"
-                        alt=""
-                        class="img img-responsive"
-                    />
+                    <img alt="{{recipe.title}}"
+                         class="img img-responsive"
+                         src="{{recipe.image.url}}"
+                         title="{{recipe.title}}"/>
                     <span class="item-details p-2 text-center">
                         <span class="small-text">
                             <a href="{% url 'recipe_detail' recipe.id %}">Iudico deterruisset</a>
                         </span>
-                        <br />
-                        <span class="small-text">$ 152.11</span>
+                        <br/>
+                        <span class="small-text">$ 0</span>
                     </span>
                     <span class="addtocart">
-                        <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-main">
-                            <i class="fas fa-angle-double-right"></i
-                            >&nbsp;Explore
+                        <a class="btn btn-main" href="{% url 'recipe_detail' recipe.pk %}">
+                            Explore <i class="fas fa-angle-double-right"></i>&nbsp;
                         </a>
                     </span>
                 </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>There are no records for recipes. </p>
             </div>
             {% endfor %}
         </div>

@@ -1,11 +1,12 @@
 {% load static %}
 <!--JUMBOTRON STARTS-->
-<section class="jumbotron2" id="jumbotron2" id="our-story">
+<section class="jumbotron2" id="jumbotron2" id="our-story"
+         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('{{ jumbotron.image.url }}');">
     <div class="overlay"></div>
     <div class="container">
         <img alt=""
              class="pb-4"
-             src="{% static 'website/images/' %}{{ jumbotron.image_url }}"/>
+             src="{% static 'images/momo-logo.png' %}"/>
         <p class="lead">{{ jumbotron.content }}</p>
         <p>
             <a class="btn btn-secondary btn-lg" href="{% url 'under_construction' %}">

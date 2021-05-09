@@ -23,7 +23,12 @@ def datas():
         'featurette': Homepage.objects.get(pk='featurette'),
         "homepage": Homepage.objects.all(),
         "jumbotron": Homepage.objects.get(pk='jumbotron'),
-        "setting": Setting.objects.get(pk=1),
+        "home_master_header": Homepage.objects.get(pk='home_master_header'),
+        "home_blog": Homepage.objects.get(pk='blog'),
+        "home_recipe": Homepage.objects.get(pk='recipe'),
+        "home_newsletter": Homepage.objects.get(pk='newsletter'),
+        #"setting": Setting.objects.get.all(),
+        #"setting": Setting.objects.get(pk=1),
     }
     return data
 

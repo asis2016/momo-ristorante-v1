@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block head %}
-<link href="{% static 'website/css/style.css' %}" rel="stylesheet">
+<style>
+    .common-master-head {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+        url("/static/images/background5.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+</style>
 {% endblock %}
 
 {% block title %} Our Story {% endblock %}

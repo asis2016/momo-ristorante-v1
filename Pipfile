@@ -49,6 +49,7 @@ wrapt = "==1.12.1"
 gunicorn = "*"
 whitenoise = "*"
 django-debug-toolbar = "*"
+pillow = "*"
 
 [dev-packages]
 
