@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock %}
+
+{% block title %} {{ setting.blogname }} | {{ setting.blogdescription }} {% endblock %}
+
+{% block content %}
+{% include './_master_head.html' %}
+{% include './_featurette.html' %}
+{% include './_recipe.html' %}
+{% include './_blog.html' %}
+{% include './_jumbotron.html' %}
+{% include '../bookings/booking.html' %}
+{% include './_newsletter.html' %}
+{% endblock %}

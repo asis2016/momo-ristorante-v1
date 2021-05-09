@@ -1,0 +1,66 @@
+{% load static %}
+{% comment "NAVIGATION" %}
+{% endcomment %}
+{% comment "TODO" %}
+{% endcomment %}
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container main-menu">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img alt="{{setting.title}}" src="{% static '/images/momo-logo.png' %}"/>
+        </a>
+        <button aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler-right"
+                data-target="#navbarResponsive"
+                data-toggle="collapse"
+                type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link" href="{% url 'blog' %}">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'recipe' %}">
+                        Recipes
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false"
+                       aria-haspopup="true"
+                       class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="{% url 'under_construction' %}"
+                       id="navbarDropdown"
+                       role="button">
+                        About us
+                    </a>
+                    <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'home' %}#featurette">Mo:Mo: of the Day</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'story' %}">Our Story</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'about' %}">About us</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact us</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'home' %}#book-table"> Book a Table </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--NAVGIATION ENDS-->
