@@ -20,10 +20,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="nav-link" href="http://127.0.0.1:8000/admin">Dashboard</a>
+                </li>
+                {% endif %}
                 <li>
                     <a class="nav-link" href="{% url 'blog' %}">
                         Blog
                     </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'home' %}#book-table"> Book a Table </a>
                 </li>
                 <li>
                     <a class="nav-link" href="{% url 'recipe' %}">
@@ -50,14 +58,6 @@
                         <a class="dropdown-item" href="{% url 'contact' %}">Contact us</a>
                     </div>
                 </li>
-                <li>
-                    <a class="nav-link" href="{% url 'home' %}#book-table"> Book a Table </a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a class="nav-link" href="http://127.0.0.1:8000/admin">Dashboard</a>
-                </li>
-                {% endif %}
             </ul>
         </div>
     </div>

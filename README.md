@@ -27,3 +27,16 @@
 
 1. crispy_forms
 2. debug_toolbar
+
+## Starting a project
+
+    $ pipenv shell
+    $ python manage.py runserver
+
+### Starting an administrator
+
+    $ python manage.py runserver
+
+    Goto: http://127.0.0.1:8000/admin/
+    username: root
+    password: root

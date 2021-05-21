@@ -8,7 +8,7 @@ from .models import Blog
 
 
 def blogs(request):
-    """ Return blog archive. """
+    """ Returns blog archive. """
     blog_posts = Blog.objects.all()
     return render(request, 'blogs/index.html', {
         'blog_posts': blog_posts

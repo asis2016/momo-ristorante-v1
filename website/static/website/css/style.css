@@ -25,6 +25,8 @@
   font-family: "Roboto", serif;
 }
 
+/* Header right after the navigation
+*/
 .master-head {
   position: relative;
   height: auto;
@@ -75,16 +77,14 @@
     font-size: 1.8rem;
   }
 }
-/* CONTACT US
---------------------------------------------------------------------------------
+/* Contact us section
 */
 .contact-us {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
 
-/* HEADER
---------------------------------------------------------------------------------
+/* For Navigation
 */
 #mainNav {
   letter-spacing: 0.0625em;
@@ -208,6 +208,8 @@
 
 /* INDEX
 --------------------------------------------------------------------------------
+*/
+/* Jumbotron
 */
 .jumbotron2 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -334,6 +336,8 @@
   width: 0%;
 }
 
+/* Featurette section
+*/
 .section-featurette {
   background-color: #f5f5ef;
 }
@@ -366,6 +370,8 @@
   }
 }
 
+/* Book a table section.
+*/
 .book-table {
   background-color: #f5f5ef;
   padding: 7rem 0;
@@ -383,6 +389,8 @@
   border-radius: 0;
 }
 
+/* Newsletter section.
+*/
 .newsletter-1 {
   background-position: center;
   background-repeat: no-repeat;
@@ -426,8 +434,7 @@
   z-index: 2;
 }
 
-/* FOOTER
---------------------------------------------------------------------------------
+/* Footer section.
 */
 .footer-1 {
   padding: 5rem 0 1rem 0;

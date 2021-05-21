@@ -1,4 +1,4 @@
-{% extends 'base_website.html' %} 
+{% extends 'base.html' %}
 {% load static %} 
 
 {% block head %}
@@ -12,14 +12,22 @@
             height: 400px;
         }
     }
+    .common-master-head {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+        url("/static/images/background5.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
 </style>
-{% endblock %} 
+{% endblock %}
 
 {% block title %} {{ setting.blogname }} | References {% endblock %} 
 
 {% block content %}
     <!-- MASTER HEADER STARTS-->
-    <header id="master-head" class="master-head">
+    <header id="master-head" class="master-head common-master-head">
         <div class="container d-flex h-100 align-items-center">
             <div class="mx-auto text-center">
                 <h1 class="site">References</h1>

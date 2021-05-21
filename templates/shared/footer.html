@@ -6,10 +6,10 @@
             <div class="col-lg-4 col-md-3 col-sm-6 p-3">
                 <div class="footer-brand">
                     <img src="{% static 'website/images/momo-logo-footer.png' %}"
-                        alt=""
-                        class="pb-2" />
+                         alt=""
+                         class="pb-2"/>
                     <p class="brand">
-                        Mo:Mo:<span style="color: #a1d683">Ristorante</span>
+                        Mo:Mo:<span style="color: #a1d683"> Ristorante</span>
                     </p>
                     <ul class="social list-unstyled text-small text-left pt-3">
                         <li>
@@ -29,7 +29,7 @@
                         </li>
                     </ul>
                 </div>
-                <small class="d-block mb-3 text-muted">© {{ year }}</small>
+                <small class="d-block mb-3 text-muted">© ASM 2021.</small>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 p-3">
                 <h5>Shop Now</h5>
@@ -102,22 +102,22 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                        <li><a href="http://127.0.0.1:8000/admin/">My Account</a></li>
+                    <li><a href="http://127.0.0.1:8000/admin/">My Account</a></li>
                     {% else %}
-                        <li><a href="http://127.0.0.1:8000/admin">Login</a></li>
+                    <li><a href="http://127.0.0.1:8000/admin">Login</a></li>
                     {% endif %}
                 </ul>
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <hr />
+        <hr/>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <small class="designer">
-                    Designed By
+                    By
                     <a href="#">
                         Ashish Singh Maharjan
                     </a>
@@ -139,11 +139,10 @@
         'use strict' // Start of use strict
 
         // Smooth scrolling using jQuery easing
-        $('a.js-scroll-trigger[href*="#"]:not([href="{% url 'under_construction' %}"])').click(
-            function () {
+        $('a.js-scroll-trigger[href*="#"]:not([href="{% url 'under_construction' %}"])').click(function () {
                 if (
                     location.pathname.replace(/^\//, '') ==
-                        this.pathname.replace(/^\//, '') &&
+                    this.pathname.replace(/^\//, '') &&
                     location.hostname == this.hostname
                 ) {
                     var target = $(this.hash)
