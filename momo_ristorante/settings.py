@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import json
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v34h48=*da_@x!pa)8w1u2x38o$a&yxi!9f(2@s@68+t%ds!t_'
+
+# JSON-based secrets module
+with open('secrets.json') as file:
+    secret = json.loads(file.read())
+
+def get_secret(setting, secret=secret):
+    """ Get the secret variable. """
+    return secret[setting]
+
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
