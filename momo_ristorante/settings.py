@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # local
     'blogs.apps.BlogsConfig',
     'bookings.apps.BookingsConfig',
+    'contact.apps.ContactConfig',
     'recipes.apps.RecipesConfig',
     'website.apps.WebsiteConfig',
 

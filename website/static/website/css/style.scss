@@ -586,6 +586,11 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
       color: #000;
     }
   }
+
+  .heading{
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dee2e6!important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -597,5 +602,145 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
     h1 {
       line-height: 8rem;
     }
+  }
+}
+
+/* Contact page
+*/
+.contact-clean {
+  padding: 80px 0;
+}
+
+@media (max-width:767px) {
+  .contact-clean {
+    padding: 20px 0;
+  }
+}
+
+.contact-clean form {
+  max-width: 480px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 4px;
+  color: #505e6c;
+}
+
+@media (max-width:767px) {
+  .contact-clean form {
+    padding: 30px;
+  }
+}
+
+.contact-clean h2 {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 36px;
+  color: inherit;
+}
+
+.contact-clean form .form-control {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+  outline: none;
+  color: inherit;
+  padding-left: 12px;
+  height: 42px;
+}
+
+.contact-clean form .form-control:focus {
+  border: 1px solid #b2b2b2;
+}
+
+.contact-clean form textarea.form-control {
+  min-height: 100px;
+  max-height: 260px;
+  padding-top: 10px;
+  resize: vertical;
+}
+
+/* our-story page.
+*/
+
+.article-clean {
+  .intro {
+    font-size: 16px;
+    margin: 0 auto 30px;
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      padding-top: 20px;
+      line-height: 1.5;
+      color: inherit;
+      margin-top: 20px;
+    }
+
+    p {
+      color: #929292;
+      font-size: 12px;
+
+      .by {
+        font-style: italic;
+      }
+
+      .date {
+        text-transform: uppercase;
+        padding: 4px 0 4px 10px;
+        margin-left: 10px;
+        border-left: 1px solid #ddd;
+      }
+
+      a {
+        color: #333;
+        text-transform: uppercase;
+        padding-left: 3px;
+      }
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  }
+
+  .text{
+    h2 {
+      margin-top: 28px;
+      margin-bottom: 20px;
+      line-height: 1.45;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+
+    figure {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      img {
+        margin-bottom: 12px;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width:768px) {
+  .article-clean .text p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width:768px) {
+  .article-clean .text h2 {
+    font-size: 20px;
   }
 }

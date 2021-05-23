@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+    #mainNav{
+        background-color: #50514f;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="container py-5 common-container">
+    <section class="contact-clean">
+        <form method="post">
+            <h1 class="text-center pb-4">Contact us</h1>
+            <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+            <div class="mb-3"><input class="form-control is-invalid" type="email" name="email" placeholder="Email"><small class="form-text text-danger">Please enter a correct email address.</small></div>
+            <div class="mb-3"><textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea></div>
+            <div class="mb-3">
+                <button class="btn btn-main" type="submit">
+                    <i class="fas fa-bookmark"></i> Book a Table
+                </button>
+            </div>
+        </form>
+    </section>
+</section>
+{% endblock %}

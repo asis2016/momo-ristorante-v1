@@ -8,13 +8,14 @@ urlpatterns = [
     # blogs
     path('blog', include('blogs.urls')),
 
+    # contact
+    path('contact', include('contact.urls')),
+
     # recipe
     path('recipe', include('recipes.urls')),
 
     path('', views.home, name="home"),
     path('about/', views.AboutView.as_view(), name='about'),
-
-    path('contact.html', views.contact, name='contact'),
 
     path('our-story.html', views.story, name='story'),
     path('reference.html', views.reference, name='references'),
