@@ -266,6 +266,8 @@
   margin-bottom: 0;
 }
 
+/* Featured products in homepage.
+*/
 .featured-products-1 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -618,6 +620,70 @@
 @media (min-width: 768px) {
   .article-clean .text h2 {
     font-size: 20px;
+  }
+}
+/* Testimonials
+*/
+.testimonials {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #f5f5ef;
+}
+.testimonials h2,
+.testimonials p {
+  color: #50514f;
+}
+.testimonials .intro {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.testimonials .people {
+  padding: 50px 0 20px;
+}
+.testimonials .item {
+  margin-bottom: 32px;
+}
+.testimonials .item .box {
+  padding: 30px;
+  background-color: #fff;
+  position: relative;
+}
+.testimonials .item .box:after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: -24px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-width: 12px 15px;
+  border-top-color: #fff;
+}
+.testimonials .item .author {
+  margin-top: 28px;
+  padding-left: 25px;
+}
+.testimonials .item .name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.testimonials .item .title {
+  font-size: 13px;
+}
+.testimonials .item .description {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+.testimonials .item img {
+  max-width: 40px;
+  float: left;
+  margin-right: 12px;
+  margin-top: -5px;
+}
+
+@media (min-width: 768px) {
+  .testimonials .item {
+    height: 220px;
   }
 }
 

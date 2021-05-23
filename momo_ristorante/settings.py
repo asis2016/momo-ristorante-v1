@@ -50,9 +50,13 @@ INSTALLED_APPS = [
     # local
     'blogs.apps.BlogsConfig',
     'bookings.apps.BookingsConfig',
+    'brands.apps.BrandsConfig',
     'contact.apps.ContactConfig',
     'recipes.apps.RecipesConfig',
+    'timelines.apps.TimelinesConfig',
+    'testimonials.apps.TestimonialsConfig',
     'website.apps.WebsiteConfig',
+
 
     # 3rd party
     'crispy_forms',

@@ -316,7 +316,8 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
 
-// Featured Products
+/* Featured products in homepage.
+*/
 .featured-products-1 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -742,5 +743,86 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 @media (min-width:768px) {
   .article-clean .text h2 {
     font-size: 20px;
+  }
+}
+
+/* Testimonials
+*/
+
+.testimonials {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: $bg_main;
+
+  h2,
+  p {
+    color: $color_secondary;
+  }
+
+  .intro {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .people {
+    padding: 50px 0 20px;
+  }
+
+  .item {
+    margin-bottom: 32px;
+
+    .box {
+      padding: 30px;
+      background-color: #fff;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 30px;
+        bottom: -24px;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-width: 12px 15px;
+        border-top-color: #fff;
+      }
+    }
+
+    .author {
+      margin-top: 28px;
+      padding-left: 25px;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+
+    .title {
+      font-size: 13px;
+    }
+
+    .description {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    img {
+      max-width: 40px;
+      float: left;
+      margin-right: 12px;
+      margin-top: -5px;
+    }
+
+  }
+}
+
+@media (max-width:767px) {
+}
+
+@media (min-width:768px) {
+  .testimonials .item {
+    height: 220px;
   }
 }
