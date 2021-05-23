@@ -1,4 +1,15 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+
+class Authorable(models.Model):
+    """
+    An abstract base class model that provides self-author ``author`` field.
+    """
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
 
 
 class TimeStampedModel(models.Model):
@@ -7,6 +18,16 @@ class TimeStampedModel(models.Model):
     """
     created = models.DateTimeField(auto_now_add=True, blank=True)
     modified = models.DateTimeField(auto_now=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+
+class Titleable(models.Model):
+    """
+    An abstract base class model that provides title ``title`` char field with max length of 100.
+    """
+    title = models.CharField(max_length=150)
 
     class Meta:
         abstract = True
