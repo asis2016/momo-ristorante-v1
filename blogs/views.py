@@ -2,7 +2,9 @@
     blogs/views.py
     --------------
 """
+from django.db import transaction
 from django.shortcuts import get_object_or_404, render
+from django.views.generic import CreateView
 
 from .models import Blog
 
@@ -21,3 +23,15 @@ def blog_detail(request, id):
     return render(request, 'blogs/detail.html', {
         'blog': blog_id
     })
+
+
+@transaction.non_atomic_requests
+class BlogCreateView(CreateView):
+    """
+    todo authentication (mixin)
+    Creates a blog post.
+    """
+    model = Blog
+    template_name = 'blogs/create.html'
+    fields = '__all__'
+    

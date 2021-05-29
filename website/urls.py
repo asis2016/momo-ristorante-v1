@@ -9,8 +9,8 @@ urlpatterns = [
     path('blog', include('blogs.urls')),
 
     # contact
-    path('contact', include('contact.urls')),
-
+    path(r'^contact/', include(('contact.urls', 'contact'), namespace='contact')),
+ 
     # recipe
     path('recipe', include('recipes.urls')),
 
