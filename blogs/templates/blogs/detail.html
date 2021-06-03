@@ -35,62 +35,67 @@
     </div>
 </header>
 
-<div class="container py-4">
-    <div class="row py-2">
-        <div class="col-md-8">
-            <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                From the Firehose
-            </h3>
-            <article class="blog-recipe mb-4">
-                <h2 class="blog-recipe-title">{{ blog.title }}</h2>
-                <p class="blog-recipe-meta">
-                    {{ blog.create_date }} by <a href="#">{{ blog.create_by }}</a>
-                </p>
-                <div class="content">
-                    {{ blog.content }}
+<section class="article-clean container py-5 common-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="intro">
+                    <h2>
+                        {{ blog.title }}
+                    </h2>
+                    <p>
+                        <span class="by">by</span>
+                        <a href="{% url 'under_construction' %}">Ashish S. Maharjan</a>
+                        <span class="date">Sept 8th, 2020 </span>
+                    </p>
+                    <img class="img-fluid" src="/static/images/desk.jpg">
                 </div>
-            </article>
-            <nav aria-label="Pagination" class="blog-pagination">
-                <a class="btn btn-outline-primary" href="#">Older</a>
-                <a aria-disabled="true" class="btn btn-outline-secondary disabled" href="#" tabindex="-1">Newer</a>
-            </nav>
+                <div class="text">
+                    <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span> ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <h2>Aliquam In Arcu </h2>
+                    <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <figure class="figure d-block">
+                        <img class="figure-img" src="/static/images/making-momo.jpg">
+                        <figcaption class="figure-caption">Making awesome MO:MO:</figcaption>
+                    </figure>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                </div>
+
+                <nav aria-label="Pagination" class="blog-pagination mt-5">
+                    <a class="btn btn-outline-primary" href="{% url 'under_construction' %}">Older</a>
+                    <a aria-disabled="true" class="btn btn-outline-secondary disabled" href="{% url 'under_construction' %}" tabindex="-1">Newer</a>
+                </nav>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About us</h4>
+                    <p>
+                        Mo:Mo: Ristorante is an awesome Django / Bootstrap 4 restaurant website template with a modern, clean and creative design.
+                    </p>
+                    <p class="mb-0">
+                        Making a reservation at Mo:mo: Ristorante is easy and takes just a
+                        couple of minutes.
+                    </p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="fst-italic">Archives</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">March 2014</li>
+                        <li class="list-group-item">February 2014</li>
+                        <li class="list-group-item">January 2014</li>
+                        <li class="list-group-item">December 2013</li>
+                        <li class="list-group-item">November 2013</li>
+                        <li class="list-group-item">October 2013</li>
+                        <li class="list-group-item">September 2013</li>
+                        <li class="list-group-item">August 2013</li>
+                        <li class="list-group-item">July 2013</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-
-        <div class="col-md-4">
-            <div class="p-4 mb-3 bg-light rounded">
-                <h4 class="fst-italic">About</h4>
-                <p class="mb-0">Saw you downtown singing the Blues. Watch you circle the drain. Why don't you let me
-                    stop
-                    by? Heavy is the head that <em>wears the crown</em>. Yes, we make angels cry, raining down on earth
-                    from
-                    up above.</p>
-            </div>
-
-            <div class="p-4">
-                <h4 class="fst-italic">Archives</h4>
-                <ul class="list-group">
-                    <li class="list-group-item">March 2014</li>
-                    <li class="list-group-item">February 2014</li>
-                    <li class="list-group-item">January 2014</li>
-                    <li class="list-group-item">December 2013</li>
-                    <li class="list-group-item">November 2013</li>
-                    <li class="list-group-item">October 2013</li>
-                    <li class="list-group-item">September 2013</li>
-                    <li class="list-group-item">August 2013</li>
-                    <li class="list-group-item">July 2013</li>
-                </ul>
-            </div>
-
-            <div class="p-4">
-                <h4 class="fst-italic">Elsewhere</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ol>
-            </div>
-        </div>
-
     </div>
-</div>
+</section>
 {% endblock %}
