@@ -63,7 +63,7 @@ Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 [home](https://momo-ristorante-2021.herokuapp.com/)
 
-![home](/screenshots/screenshot-v1.0.png)
+![home](/screenshots/screenshot-v2.png)
 
 
 ## "Features"
