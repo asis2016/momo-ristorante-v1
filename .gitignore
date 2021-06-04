@@ -18,3 +18,5 @@ backend/jupyter/
 
 **/design/
 
+
+_secrets.json

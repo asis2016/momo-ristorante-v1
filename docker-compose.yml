@@ -5,6 +5,9 @@ services:
     build: .
     #command: python /code/manage.py runserver 0.0.0.0:8000
     command: gunicorn momo_ristorante.wsgi -b 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=replace_SECRET_KEY_from_readme.md
+      - DEBUG=1
     volumes:
       - .:/code
     ports:

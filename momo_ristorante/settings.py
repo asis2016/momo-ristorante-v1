@@ -23,17 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # JSON-based secrets module
-with open('secrets.json') as file:
-    secret = json.loads(file.read())
+#with open('secrets.json') as file:
+    #secret = json.loads(file.read())
 
-def get_secret(setting, secret=secret):
-    """ Get the secret variable. """
-    return secret[setting]
+#def get_secret(setting, secret=secret):
+    #""" Get the secret variable. """
+    #return secret[setting]
 
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', default=0))
 
 ALLOWED_HOSTS = ['*']
 
