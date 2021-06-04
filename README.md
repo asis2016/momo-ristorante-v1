@@ -61,9 +61,10 @@ Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ## Demo with Screenshots
 
-[index](https://basic-blog-app-amaharjan.herokuapp.com/)
+[home](https://momo-ristorante-2021.herokuapp.com/)
 
-![index](/screenshots/a.png)
+![home](/screenshots/screenshot-v1.0.png)
+
 
 ## "Features"
 
