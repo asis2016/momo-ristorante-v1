@@ -16,6 +16,7 @@ class Recipe(models.Model):
     excerpt = models.TextField(max_length=200, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(upload_to='', default='default.png', blank=True)
+    image_url = models.CharField(max_length=200, blank=True)
     create_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     create_date = models.DateField(auto_now_add=True)
 

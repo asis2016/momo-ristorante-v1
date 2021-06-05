@@ -29,6 +29,7 @@ class Homepage(models.Model):
     content = models.TextField(default='subtitle XYZ', blank=True)
     link_url = models.CharField(max_length=100, default='link_url', blank=True)
     image = models.ImageField(upload_to='', default='default.png', blank=True)
+    image_url = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return f'{self.homepage_id}'
