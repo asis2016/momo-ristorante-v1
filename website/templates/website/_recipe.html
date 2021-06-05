@@ -14,7 +14,7 @@
                 <div class="item">
                     <img alt="{{recipe.title}}"
                          class="img img-responsive"
-                         src="{{recipe.image.url}}"
+                         src="{% static '/images/' %}{{recipe.image_url}}"
                          title="{{recipe.title}}"/>
                     <span class="item-details p-2 text-center">
                         <span class="small-text">

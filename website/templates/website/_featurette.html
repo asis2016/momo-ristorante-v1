@@ -10,7 +10,7 @@
             <div class="col-md-5">
                 <img alt="{{ featurette.title }}"
                      class="featurette-image img-fluid mx-auto"
-                     src="{{ featurette.image.url }}"
+                     src="{% static '/images/' %}{{ featurette.image_url }}"
                      style="width: 500px; height: 500px"
                 />
             </div>

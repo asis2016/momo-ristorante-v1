@@ -36,7 +36,7 @@
             <div class="card shadow-sm">
                 <img alt="{{ blog_post.title }}"
                      class="card-img-top"
-                     src="{{ post.image.url }}">
+                     src="{% static '/images/' %}{{ post.image_url }}">
                 <div class="card-body">
                     <h5>
                         <a href="{% url 'recipe_detail' post.id %}">

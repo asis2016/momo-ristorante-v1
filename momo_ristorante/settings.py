@@ -176,6 +176,15 @@ SITE_NAME = 'MOMO Ristorante'
 # ...
 # ]
 
+# django-allauth config site = 1
+SITE_ID = 1
+
+# django-allauth config
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
