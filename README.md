@@ -8,7 +8,7 @@ Status: WIP
 Docker 20.10.6, Python 3.8, Django 3.2.3, Whitenoise, Gunicorn, Heroku
 
 ## Demo
-[https://momo-ristorante-2021.herokuapp.com/](https://momo-ristorante-2021.herokuapp.com/)
+[https://momo-ristorante-v1.herokuapp.com/](https://momo-ristorante-v1.herokuapp.com/)
 
 ## Environment Variables
 
@@ -38,7 +38,7 @@ Start the project
 ```
 
 ```bash
-  docker-compose up -d
+  docker-compose up -f docker-compose.yml -d
 ```
 
 ## Running Tests
@@ -61,7 +61,7 @@ Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ## Demo with Screenshots
 
-[home](https://momo-ristorante-2021.herokuapp.com/)
+[home](https://momo-ristorante-v1.herokuapp.com/)
 
 ![home](/screenshots/screenshot-v2.png)
 
