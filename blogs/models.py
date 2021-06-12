@@ -15,7 +15,7 @@ from core.models import (
 )
 
 
-class Blog(Authorable, TimeStampedModel, Titleable, models.Model):
+class Blog(Authorable, TimeStampedModel, Titleable):
     """
     Blog model as of v.1.0
     """

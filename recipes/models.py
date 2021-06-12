@@ -5,7 +5,9 @@ from django.db import models
 
 
 class Recipe(models.Model):
-    """ Recipe model as of v.1.0. """
+    """
+    Recipe model as of v.1.0.
+    """
     CATEGORY = (
         ('WS', 'Western'),
         ('TB', 'Tibetan'),

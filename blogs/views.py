@@ -9,16 +9,20 @@ from django.views.generic import CreateView
 from .models import Blog
 
 
-def blogs(request):
-    """ Returns blog archive. """
+def blog_list(request):
+    """
+    Returns blog list.
+    """
     blog_posts = Blog.objects.all()
-    return render(request, 'blogs/index.html', {
+    return render(request, 'blogs/list.html', {
         'blog_posts': blog_posts
     })
 
 
 def blog_detail(request, id):
-    """ Return single page for a blog. """
+    """
+    Returns detail (single) page of a blog article.
+    """
     blog_id = get_object_or_404(Blog, pk=id)
     return render(request, 'blogs/detail.html', {
         'blog': blog_id

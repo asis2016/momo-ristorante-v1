@@ -1,8 +1,8 @@
 from django.urls import path
 
-from . import views
+from .views import blog_list, blog_detail
 
 urlpatterns = [
-    path('<uuid:id>', views.blog_detail, name='blog_detail'),
-    path('', views.blogs, name='blog'),
+    path('<uuid:id>', blog_detail, name='blog_detail'),
+    path('', blog_list, name='blog'),
 ]
