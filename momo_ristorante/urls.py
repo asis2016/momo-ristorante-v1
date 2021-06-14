@@ -25,6 +25,6 @@ urlpatterns = [
                   path('', include('website.urls')),
 
                   # administrator
-                  path('administrator/', include('administrators.urls')),
-                  
+                  path('dashboard/', include(('administrators.urls', 'dashboard'), namespace='dashboard')),
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,7 +4,7 @@
 """
 from django.db import transaction
 from django.shortcuts import get_object_or_404, render
-from django.views.generic import CreateView
+from django.views import generic
 
 from .models import Blog
 
@@ -30,12 +30,30 @@ def blog_detail(request, id):
 
 
 @transaction.non_atomic_requests
-class BlogCreateView(CreateView):
+class DashboardBlogCreateView(generic.CreateView):
     """
     todo authentication (mixin)
     Creates a blog post.
     """
     model = Blog
-    template_name = 'blogs/create.html'
+    template_name = 'dashboard/create.html'
     fields = '__all__'
-    
+
+
+class DashboardBlogListView(generic.ListView):
+    """
+    Blog list view for dashboard.
+    """
+    model = Blog
+    template_name = 'dashboard/list.html'
+    fields = '_all_'
+    context_object_name = 'blog'
+
+
+class DashboardBlogDetailView(generic.DetailView):
+    """
+    Blog detail view for dashboard.
+    """
+    model = Blog
+    template_name = 'dashboard/detail.html'
+    context_object_name = 'blog'

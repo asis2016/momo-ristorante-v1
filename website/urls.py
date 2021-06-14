@@ -6,7 +6,7 @@ from . import views
 urlpatterns = [
 
     # blogs
-    path('blog', include('blogs.urls')),
+    path('blog', include(('blogs.urls', 'blog'), namespace='blog')),
 
     # contact
     path(r'^contact/', include(('contact.urls', 'contact'), namespace='contact')),

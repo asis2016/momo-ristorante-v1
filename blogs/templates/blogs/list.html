@@ -47,7 +47,7 @@
                      src="{% static '/images/' %}{{blog_post.image_url}}">
                 <div class="card-body">
                     <h5>
-                        <a href="{% url 'blog_detail' blog_post.id %}">
+                        <a href="{% url 'blog:blog_detail' blog_post.id %}">
                             {{ blog_post.title|slice:":15" }}
                         </a>
                     </h5>
@@ -57,7 +57,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a class="btn btn-sm btn-outline-secondary"
-                               href="{% url 'blog_detail' blog_post.id %}">
+                               href="{% url 'blog:blog_detail' blog_post.id %}">
                                 Read more <i class="fas fa-angle-double-right"></i>
                             </a>
                         </div>
@@ -66,6 +66,15 @@
                         </small>
                     </div>
                 </div>
+                <!-- todo blog_detail to edit-->
+                {% if user.is_authenticated %}
+                <div class="card-footer">
+                    <a class="btn btn-sm btn-outline-secondary"
+                       href="{% url 'dashboard:blog_detail' blog_post.id %}">
+                        Edit <i class="fas fa-angle-double-right"></i>
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
         {% empty %}
