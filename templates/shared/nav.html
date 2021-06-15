@@ -4,9 +4,17 @@
 {% comment "TODO" %}
 {% endcomment %}
 
+<!-- todo refactor -->
+<style>
+    .nav-item-user{}
+    .nav-item-user .user-image{
+        border-radius: 50%;
+    }
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container main-menu">
-        <a class="navbar-brand" href="{% url 'home' %}">
+        <a class="navbar-brand" href="{% url 'website:home' %}">
             <img alt="{{setting.title}}" src="{% static '/images/momo-logo.png' %}"/>
         </a>
         <button aria-controls="navbarResponsive"
@@ -20,26 +28,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                {% if user.is_authenticated %}
                 <li>
-                    <a class="nav-link" href="http://127.0.0.1:8000/admin">Dashboard</a>
-                </li>
-                {% endif %}
-                <li>
-                    <a class="nav-link" href="{% url 'home' %}">
+                    <a class="nav-link" href="{% url 'website:home' %}">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{% url 'blog:blog_list' %}">
+                    <a class="nav-link" href="{% url 'website:blog_list' %}">
                         Blog
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{% url 'home' %}#book-table"> Book a Table </a>
+                    <a class="nav-link" href="{% url 'website:home' %}#book-table"> Book a Table </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{% url 'recipe' %}">
+                    <a class="nav-link" href="{% url 'website:recipe' %}">
                         Recipes
                     </a>
                 </li>
@@ -48,21 +51,44 @@
                        aria-haspopup="true"
                        class="nav-link dropdown-toggle"
                        data-toggle="dropdown"
-                       href="{% url 'under_construction' %}"
+                       href="{% url 'website:under_construction' %}"
                        id="navbarDropdown"
                        role="button">
                         About us
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'home' %}#featurette">Mo:Mo: of the Day</a>
+                        <a class="dropdown-item" href="{% url 'website:home' %}#featurette">Mo:Mo: of the Day</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'story' %}">Our Story</a>
+                        <a class="dropdown-item" href="{% url 'website:story' %}">Our Story</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'about' %}">About us</a>
+                        <a class="dropdown-item" href="{% url 'website:about' %}">About us</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'contact:index' %}">Contact us</a>
+                        <a class="dropdown-item" href="{% url 'website:contact' %}">Contact us</a>
                     </div>
+
                 </li>
+                <!-- todo -->
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown nav-item-user">
+                    <a aria-expanded="false"
+                       aria-haspopup="true"
+                       class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="{% url 'website:under_construction' %}"
+                       id="navbarDropdown"
+                       role="button">
+                        <img src="https://via.placeholder.com/30x30" alt="" class="user-image">
+                    </a>
+                    <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'dashboard:index' %}">Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'website:story' %}">My Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Django Admin</a>
+                    </div>
+
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

@@ -18,13 +18,13 @@
                          title="{{recipe.title}}"/>
                     <span class="item-details p-2 text-center">
                         <span class="small-text">
-                            <a href="{% url 'recipe_detail' recipe.id %}">Iudico deterruisset</a>
+                            <a href="{% url 'website:recipe_detail' recipe.id %}">Iudico deterruisset</a>
                         </span>
                         <br/>
                         <span class="small-text">$ 0</span>
                     </span>
                     <span class="addtocart">
-                        <a class="btn btn-main" href="{% url 'recipe_detail' recipe.pk %}">
+                        <a class="btn btn-main" href="{% url 'website:recipe_detail' recipe.pk %}">
                             Explore <i class="fas fa-angle-double-right"></i>&nbsp;
                         </a>
                     </span>

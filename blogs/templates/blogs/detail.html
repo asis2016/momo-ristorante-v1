@@ -4,16 +4,27 @@
 {% block head %}
 <style>
     .master-head {
-        min-height: 400px;
+        min-height: 450px;
     }
 
-    .common-header{
+    .common-header {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
         url("/static/images/background5.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-size: cover;
+    }
+
+    .admin-menu {
+        padding: 4px 0 4px 10px;
+        margin-left: 10px;
+        border-left: 1px solid #ddd;
+    }
+
+    .excerpt {
+        opacity: 0.8;
+        margin: 25px 0;
     }
 
     @media (min-width: 992px) {
@@ -24,7 +35,7 @@
 </style>
 {% endblock %}
 
-{% block title %} {{ blog.title }} {% endblock %}
+{% block title %} {{ post.title }} {% endblock %}
 
 {% block content %}
 <header class="master-head common-header">
@@ -41,37 +52,71 @@
             <div class="col-md-8">
                 <div class="intro">
                     <h2>
-                        {{ blog.title }}
+                        {{ post.title }}
                     </h2>
                     <p>
                         <span class="by">by</span>
-                        <a href="{% url 'under_construction' %}">Ashish S. Maharjan</a>
-                        <span class="date">Sept 8th, 2020 </span>
+                        <a href="{% url 'website:under_construction' %}">
+                            {{ post.author }}
+                        </a>
+                        <span class="date">
+                            {{ post.created }}
+                        </span>
+                        {% if user.is_authenticated %}
+                        <span class="admin-menu">
+                            <a href="{% url 'dashboard:blog_detail' post.id %}">
+                                Edit as Admin
+                            </a>
+                        </span>
+                        {% endif %}
                     </p>
-                    <img class="img-fluid" src="/static/images/desk.jpg">
+                    <div class="featured-image">
+                        <img src="{% static 'images/' %}{{post.image_url}}"
+                             class="img-fluid"
+                             alt={{ post.title }}>
+                    </div>
                 </div>
-                <div class="text">
-                    <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span> ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                <div class="excerpt">
+                    {{'Excerpt: '}}{{ post.excerpt }}
+                </div>
+                <div class="content text">
+                    <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span>
+                        ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget
+                        velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia Curae.</p>
+                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula
+                        rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar
+                        dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                        cubilia Curae.</p>
                     <h2>Aliquam In Arcu </h2>
-                    <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis
+                        tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum
+                        primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                     <figure class="figure d-block">
                         <img class="figure-img" src="/static/images/making-momo.jpg">
                         <figcaption class="figure-caption">Making awesome MO:MO:</figcaption>
                     </figure>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+                        Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis
+                        tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
                 </div>
 
                 <nav aria-label="Pagination" class="blog-pagination mt-5">
-                    <a class="btn btn-outline-primary" href="{% url 'under_construction' %}">Older</a>
-                    <a aria-disabled="true" class="btn btn-outline-secondary disabled" href="{% url 'under_construction' %}" tabindex="-1">Newer</a>
+                    <a class="btn btn-outline-primary"
+                       href="{% url 'website:under_construction' %}">
+                        Older
+                    </a>
+                    <a aria-disabled="true"
+                       class="btn btn-outline-secondary disabled"
+                       href="{% url 'website:under_construction' %}" tabindex="-1">Newer</a>
                 </nav>
             </div>
             <div class="col-md-4">
                 <div class="p-4 mb-3 bg-light rounded">
                     <h4 class="fst-italic">About us</h4>
                     <p>
-                        Mo:Mo: Ristorante is an awesome Django / Bootstrap 4 restaurant website template with a modern, clean and creative design.
+                        Mo:Mo: Ristorante is an awesome Django / Bootstrap 4 restaurant website template with a modern,
+                        clean and creative design.
                     </p>
                     <p class="mb-0">
                         Making a reservation at Mo:mo: Ristorante is easy and takes just a

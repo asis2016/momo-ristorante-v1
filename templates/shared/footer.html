@@ -35,37 +35,37 @@
                 <h5>Book a Table</h5>
                 <ul class="list-unstyled text-small">
                     <li>
-                        <a href="{% url 'under_construction' %}">Cool stuff</a>
+                        <a href="{% url 'website:under_construction' %}">Cool stuff</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Random feature</a>
+                        <a href="{% url 'website:under_construction' %}">Random feature</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Team feature</a>
+                        <a href="{% url 'website:under_construction' %}">Team feature</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Stuff for developers</a>
+                        <a href="{% url 'website:under_construction' %}">Stuff for developers</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Another one</a>
+                        <a href="{% url 'website:under_construction' %}">Another one</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Last time</a>
+                        <a href="{% url 'website:under_construction' %}">Last time</a>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 p-3">
                 <h5>Features</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a href="{% url 'under_construction' %}">Resource</a></li>
+                    <li><a href="{% url 'website:under_construction' %}">Resource</a></li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Resource name</a>
+                        <a href="{% url 'website:under_construction' %}">Resource name</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Another resource</a>
+                        <a href="{% url 'website:under_construction' %}">Another resource</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Final resource</a>
+                        <a href="{% url 'website:under_construction' %}">Final resource</a>
                     </li>
                 </ul>
             </div>
@@ -73,31 +73,31 @@
                 <h5>Help?</h5>
                 <ul class="list-unstyled text-small">
                     <li>
-                        <a href="{% url 'under_construction' %}">My Account</a>
+                        <a href="{% url 'website:under_construction' %}">My Account</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Return Policy</a>
+                        <a href="{% url 'website:under_construction' %}">Return Policy</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Order Tracking</a>
+                        <a href="{% url 'website:under_construction' %}">Order Tracking</a>
                     </li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Shipping Charges</a>
+                        <a href="{% url 'website:under_construction' %}">Shipping Charges</a>
                     </li>
-                    <li><a href="{% url 'under_construction' %}">FAQs</a></li>
+                    <li><a href="{% url 'website:under_construction' %}">FAQs</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 p-3">
                 <h5>Quick link</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a href="{% url 'under_construction' %}">Team</a></li>
+                    <li><a href="{% url 'website:under_construction' %}">Team</a></li>
                     <li>
-                        <a href="{% url 'under_construction' %}">Locations</a>
+                        <a href="{% url 'website:under_construction' %}">Locations</a>
                     </li>
-                    <li><a href="{% url 'under_construction' %}">Privacy</a></li>
-                    <li><a href="{% url 'under_construction' %}"></a></li>
+                    <li><a href="{% url 'website:under_construction' %}">Privacy</a></li>
+                    <li><a href="{% url 'website:under_construction' %}"></a></li>
                     <li>
-                        <a href="{% url 'references' %}">
+                        <a href="{% url 'website:references' %}">
                             References
                         </a>
                     </li>
@@ -139,7 +139,7 @@
         'use strict' // Start of use strict
 
         // Smooth scrolling using jQuery easing
-        $('a.js-scroll-trigger[href*="#"]:not([href="{% url 'under_construction' %}"])').click(function () {
+        $('a.js-scroll-trigger[href*="#"]:not([href="{% url 'website:under_construction' %}"])').click(function () {
                 if (
                     location.pathname.replace(/^\//, '') ==
                     this.pathname.replace(/^\//, '') &&

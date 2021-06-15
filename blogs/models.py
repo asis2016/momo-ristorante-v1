@@ -29,4 +29,4 @@ class Blog(Authorable, TimeStampedModel, Titleable):
         return str(self.title)
 
     def get_absolute_url(self):
-        return reverse('blog_detail', args=[str(self.id)])
+        return reverse('dashboard:blog_detail', args=[str(self.id)])

@@ -15,7 +15,7 @@
                          class="card-img-top"
                          src="{% static '/images/' %}{{ post.image_url }}"/>
                     <div class="card-body">
-                        <a href="{% url 'blog:blog_detail' post.id %}">
+                        <a href="{% url 'website:blog_detail' post.id %}">
                             <h5>{{ post.title }}</h5>
                         </a>
                         <p>{{ post.excerpt }}</p>

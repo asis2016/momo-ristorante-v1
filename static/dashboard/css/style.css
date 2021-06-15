@@ -1,0 +1,38 @@
+.sidebar {
+    background: #2f2f2f;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .90)
+}
+
+/**
+* Breadcrumb
+*/
+.breadcrumb-nav {
+    background: #e8e8e8;
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.breadcrumb-nav ol {
+    margin: 0;
+}
+
+/**
+* Navbar
+*/
+.navbar-action {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 15px;
+}
+
+.navbar-action .btn {
+    margin-right: 15px;
+}
+
+.action a {
+    margin-right: 5px;
+}
