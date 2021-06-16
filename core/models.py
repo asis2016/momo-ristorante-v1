@@ -1,6 +1,6 @@
+from core.validators import validate_blog
 from django.db import models
 from django.contrib.auth import get_user_model
-
 
 class Authorable(models.Model):
     """
@@ -28,6 +28,13 @@ class Titleable(models.Model):
     An abstract base class model that provides title ``title`` char field with max length of 100.
     """
     title = models.CharField(max_length=150)
+
+    class Meta:
+        abstract = True
+
+
+class BlogTitleAbstractModel(models.Model):
+    title = models.CharField(max_length=150, validators=[validate_blog])
 
     class Meta:
         abstract = True

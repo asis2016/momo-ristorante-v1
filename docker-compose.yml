@@ -3,8 +3,8 @@ version: '3.8'
 services:
   web:
     build: .
-    #command: python /code/manage.py runserver 0.0.0.0:8000
-    command: gunicorn momo_ristorante.wsgi -b 0.0.0.0:8000
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    #command: gunicorn momo_ristorante.wsgi -b 0.0.0.0:8000
     environment:
       - SECRET_KEY=replace_from_readme.md
       - DEBUG=1

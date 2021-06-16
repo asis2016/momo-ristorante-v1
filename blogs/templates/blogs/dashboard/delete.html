@@ -1,0 +1,63 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-delete">
+    <div class="row">
+        <div class="col-6">
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;
+                <div>
+                    Are you sure want to delete the following?
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Id</td>
+                            <td>{{ post.id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>{{ post.title }}</td>
+                        </tr>
+                        <tr>
+                            <td>Author</td>
+                            <td>{{ post.author }}</td>
+                        </tr>
+                        <tr>
+                            <td>Created</td>
+                            <td>{{ post.created }}</td>
+                        </tr>
+                        <tr>
+                            <td>Last modified</td>
+                            <td>{{ post.modified }}</td>
+                        </tr>
+                        <tr>
+                            <td>View on site</td>
+                            <td>
+                                <a href="{% url 'website:blog_detail' post.id %}"
+                                   target="_blank">
+                                    .../blog/{{ post.id }}
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'dashboard:blog_list' %}"
+                       class="btn btn-secondary btn-sm">
+                        <i class="fa fa-reply"></i>{{ ' No, go back to the list' }}
+                    </a>
+                    <input type="submit" class="btn btn-danger btn-sm" value="Yes"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

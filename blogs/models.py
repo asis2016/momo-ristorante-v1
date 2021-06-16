@@ -5,17 +5,18 @@
     A blog is created by an Employee (employees.models) and it is publicly visible.
 """
 import uuid
-from django.contrib.auth import get_user_model
+
 from django.db import models
 from django.urls import reverse
+
 from core.models import (
     Authorable,
-    TimeStampedModel,
-    Titleable
+    BlogTitleAbstractModel,
+    TimeStampedModel
 )
 
 
-class Blog(Authorable, TimeStampedModel, Titleable):
+class Blog(Authorable, TimeStampedModel, BlogTitleAbstractModel):
     """
     Blog model as of v.1.0
     """

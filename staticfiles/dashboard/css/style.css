@@ -1,9 +1,33 @@
+.fa-trash {
+    color: indianred;
+}
+
 .sidebar {
     background: #2f2f2f;
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, .90)
+}
+
+.dashboard-list tbody img {
+    width: 30px;
+    height: 30px;
+}
+
+.dashboard-detail h1 {
+    font-size: 25px;
+}
+
+.dashboard-detail .featured-image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dashboard-delete .btn {
+    width: 200px;
 }
 
 /**

@@ -1,0 +1,46 @@
+{% extends 'dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="">Blog</a></li>
+        <li class="breadcrumb-item"><a href="#">Update</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+            <i>{{ recipe.title }}</i>
+        </li>
+    </ol>
+</nav>
+<!-- Ends Breadcrumb -->
+
+<!-- Navbar action -->
+<nav class="navbar navbar-action">
+    <a class="btn btn-sm btn-outline-primary"
+       href="{% url 'dashboard:recipe_list' %}">
+        <i class="fa fa-reply"></i>{{' Go back to the list'}}
+    </a>
+    <a class="btn btn-sm btn-outline-danger"
+       href="{% url 'dashboard:recipe_delete' recipe.id %}">
+        <i class="fa fa-trash"></i> Delete
+    </a>
+</nav>
+<!-- Ends Navbar action -->
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    {{ form | crispy }}
+                </div>
+                <div class="card-footer">
+                    <input type="submit" class="btn btn-success" value="Update"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

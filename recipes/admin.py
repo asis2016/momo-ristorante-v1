@@ -2,7 +2,12 @@ from django.contrib import admin
 
 from .models import Recipe
 
+
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'create_by', 'image_url',)
+    """
+    Django admin for the Recipe model.
+    """
+    list_display = ('id', 'title', 'image_url', 'author', 'created',)
+
 
 admin.site.register(Recipe, RecipeAdmin)

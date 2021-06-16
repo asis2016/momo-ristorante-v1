@@ -37,8 +37,12 @@ class DashboardBlogCreateView(generic.CreateView):
     Creates a blog post.
     """
     model = Blog
-    template_name = 'dashboard/create.html'
-    fields = '__all__'
+    template_name = 'blogs/dashboard/create.html'
+    fields = ('title', 'image_url', 'excerpt', 'content',)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class DashboardBlogListView(generic.ListView):
@@ -46,17 +50,17 @@ class DashboardBlogListView(generic.ListView):
     Blog list view for dashboard.
     """
     model = Blog
-    template_name = 'dashboard/list.html'
+    template_name = 'blogs/dashboard/list.html'
     fields = '_all_'
     context_object_name = 'blog'
 
 
 class DashboardBlogDetailView(generic.DetailView):
     """
-    Blog detail view for dashboard.
+    The Blog DetailView for the Dashboard.
     """
     model = Blog
-    template_name = 'dashboard/detail.html'
+    template_name = 'blogs/dashboard/detail.html'
     context_object_name = 'post'
 
 
@@ -65,7 +69,7 @@ class DashboardBlogUpdateView(generic.UpdateView):
     Blog post update
     """
     model = Blog
-    template_name = 'dashboard/update.html'
+    template_name = 'blogs/dashboard/update.html'
     fields = '__all__'
     context_object_name = 'post'
 
@@ -75,6 +79,6 @@ class DashboardBlogDeleteView(generic.DeleteView):
     Blog post delete.
     """
     model = Blog
-    template_name = 'dashboard/delete.html'
+    template_name = 'blogs/dashboard/delete.html'
     context_object_name = 'post'
     success_url = reverse_lazy('dashboard:blog_list')

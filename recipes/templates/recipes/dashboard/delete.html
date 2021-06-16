@@ -1,0 +1,64 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-delete">
+    <div class="row">
+        <div class="col-6">
+            <div class="alert alert-warning d-flex align-items-center"
+                 role="alert">
+                <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+                <div>
+                    Are you sure want to delete the following?
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Id</td>
+                            <td>{{ recipe.id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>{{ recipe.title }}</td>
+                        </tr>
+                        <tr>
+                            <td>Author</td>
+                            <td>{{ recipe.author }}</td>
+                        </tr>
+                        <tr>
+                            <td>Created</td>
+                            <td>{{ recipe.created }}</td>
+                        </tr>
+                        <tr>
+                            <td>Last modified</td>
+                            <td>{{ recipe.modified }}</td>
+                        </tr>
+                        <tr>
+                            <td>View on site</td>
+                            <td>
+                                <a href="{% url 'website:recipe_detail' recipe.id %}"
+                                   target="_blank">
+                                    .../blog/{{ recipe.id }}
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'dashboard:recipe_list' %}"
+                       class="btn btn-secondary btn-sm">
+                        <i class="fa fa-reply"></i>{{ ' No, go back to the list' }}
+                    </a>
+                    <input type="submit" class="btn btn-danger btn-sm" value="Yes"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

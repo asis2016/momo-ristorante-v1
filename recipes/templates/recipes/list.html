@@ -39,7 +39,7 @@
                      src="{% static '/images/' %}{{ post.image_url }}">
                 <div class="card-body">
                     <h5>
-                        <a href="{% url 'recipe_detail' post.id %}">
+                        <a href="{% url 'website:recipe_detail' post.id %}">
                             {{ post.title|slice:":15" }}
                         </a>
                     </h5>
@@ -49,7 +49,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a class="btn btn-sm btn-outline-secondary"
-                               href="{% url 'recipe_detail' post.id %}">
+                               href="{% url 'website:recipe_detail' post.id %}">
                                 Read more <i class="fas fa-angle-double-right"></i>
                             </a>
                         </div>

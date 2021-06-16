@@ -1,0 +1,122 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-detail">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard:index' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'dashboard:recipe_list' %}">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ recipe.title }}
+            </li>
+        </ol>
+    </nav>
+    <!-- Ends Breadcrumb -->
+
+    <!-- Navbar action -->
+    <nav class="navbar navbar-action">
+        <a class="btn btn-sm btn-outline-primary"
+           href="{% url 'dashboard:recipe_list' %}">
+            <i class="fa fa-reply"></i>{{' Go back to the list'}}
+        </a>
+        <a class="btn btn-sm btn-outline-primary"
+           href="{% url 'dashboard:recipe_update' recipe.id %}">
+            <i class="fa fa-pencil"></i>{{' Update'}}
+        </a>
+        <a class="btn btn-sm btn-outline-danger"
+           href="{% url 'dashboard:recipe_delete' recipe.id %}">
+            <i class="fa fa-trash"></i> Delete
+        </a>
+        <a class="btn btn-sm btn-outline-secondary"
+           href="{% url 'dashboard:recipe_create' %}">
+            <i class="fa fa-plus"></i>{{' Add new'}}
+        </a>
+
+        <a class="btn btn-sm btn-outline-secondary"
+           href="{% url 'website:recipe_detail' recipe.id %}"
+           target="_blank">
+            <i class="fa fa-external-link"></i>{{' View on site'}}
+        </a>
+        <button class="btn btn-sm btn-outline-secondary" type="button">
+            <i class="fa fa-download"></i>{{' Export'}}
+        </button>
+
+    </nav>
+    <!-- Ends Navbar action -->
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div>
+                        <h1>{{ recipe.title }}</h1>
+
+                        <hr>
+                        <p><b>Excerpt:</b></p>
+                        <p class="excerpt">
+                            {{ recipe.excerpt }}
+                        </p>
+                        <hr>
+                        <p><b>Content:</b></p>
+                        <div class="content">
+                            {{ recipe.content }}
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-header">
+                    Meta
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Id</td>
+                            <td>{{ recipe.id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Author</td>
+                            <td>{{ recipe.author }}</td>
+                        </tr>
+                        <tr>
+                            <td>Created</td>
+                            <td>{{ recipe.created }}</td>
+                        </tr>
+                        <tr>
+                            <td>Last modified</td>
+                            <td>{{ recipe.modified }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="{% url 'website:recipe_detail' recipe.id %}"
+                                   target="_blank">
+                                    .../blog/{{ recipe.id }}
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Featured image -->
+            <div class="card shadow mt-2">
+                <div class="card-header">
+                    Featured image
+                </div>
+                <div class="card-body text-center">
+                    <img class="featured-image"
+                         src="{% static 'images/' %}{{ recipe.image_url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
