@@ -98,5 +98,9 @@ def underconstruction(request):
     """ Return "not developed" pages. """
     return render(request, 'under_construction/under_construction.html')
 
+
+# 404
+
+
 # def contact(request, id):
 #    return HttpResponse('Yo this is contact page ' + str(id))

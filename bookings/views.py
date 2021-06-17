@@ -2,7 +2,7 @@
     bookings/views.py
     -----------------
 """
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
 
 from .models import Booking
 
@@ -20,4 +20,32 @@ class BookingDetailView(DetailView):
     """
     model = Booking
     template_name = 'bookings/detail.html'
+    context_object_name = 'booking'
+
+
+# Dashboard
+class DashboardBookingListView(ListView):
+    """
+    The Booking ListView for the Dashboard.
+    """
+    model = Booking
+    template_name = 'bookings/dashboard/list.html'
+    context_object_name = 'bookings'
+
+
+class DashboardBookingDetailView(DetailView):
+    """
+    The Booking DetailView for the Dashboard.
+    """
+    model = Booking
+    template_name = 'bookings/dashboard/detail.html'
+    context_object_name = 'booking'
+
+
+class DashboardBookingDeleteView(DeleteView):
+    """
+    The Booking DeleteView for the Dashboard.
+    """
+    model = Booking
+    template_name = 'bookings/dashboard/delete.html'
     context_object_name = 'booking'

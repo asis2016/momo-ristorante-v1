@@ -7,11 +7,13 @@
     Only employees (all as of v.1.0) can view booking information.
 """
 import uuid
-from django.contrib.auth import get_user_model
+
 from django.db import models
 
+from core.models import TimeStampedModel
 
-class Booking(models.Model):
+
+class Booking(TimeStampedModel):
     """ Booking model as of v.1.0 """
     id = models.UUIDField(
         primary_key=True,
@@ -23,9 +25,7 @@ class Booking(models.Model):
     phone = models.TextField()
     person = models.IntegerField()
     note = models.TextField(blank=True)
-    status = models.BooleanField(default=0)
-    create_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    create_date = models.DateField(auto_now_add=True)
+    is_approved = models.BooleanField(default=1)
 
     def __str__(self):
         return str(self.fullname)

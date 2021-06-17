@@ -1,7 +1,9 @@
 {% extends 'dashboard.html' %}
+{% load custom_tags %}
 {% load static %}
 
 {% block content %}
+{% simple_count %}
 <div class="dashboard-list">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -83,7 +85,6 @@
                             <a href="{% url 'dashboard:blog_detail' post.id %}">
                                 {{post.title}}
                             </a>
-
                         </td>
                         <td>{{ post.excerpt|slice:":50"}}{{'...'}}</td>
                         <td>{{ post.author }}</td>

@@ -17,13 +17,13 @@
 </head>
 <body id="page-top">
 <div id="wrapper">
-    {% include './dashboard/nav.html' %}
+    {% include './dashboard/_nav.html' %}
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
-            {% include './dashboard/top.html' %}
+            {% include './dashboard/_top.html' %}
             <div class="container-fluid">
                 {% block content %}
                 {% endblock %}
             </div>
         </div>
-        {% include './dashboard/footer.html' %}
+        {% include './dashboard/_footer.html' %}

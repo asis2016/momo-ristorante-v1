@@ -36,7 +36,8 @@ ENVIRONMENT=os.environ.get('ENVIRONMENT', default='development')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.environ.get('DEBUG', default=0))
+#DEBUG = int(os.environ.get('DEBUG', default=1))
+DEBUG = False
 
 ALLOWED_HOSTS = ['momo-ristorante-v1.herokuapp.com', 'localhost', '127.0.0.1', '127.0.0.1:8000', '*']
 
@@ -97,6 +98,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            # for debug complex templates.
+            'string_if_invalid': 'INVALID EXPRESSION: %s'
         },
     },
 ]
