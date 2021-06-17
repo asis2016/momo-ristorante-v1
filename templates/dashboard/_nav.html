@@ -31,7 +31,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link"
+                   href="{% url 'dashboard:booking_list' %}">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Booking</span>
                 </a>
@@ -59,6 +60,14 @@
                 <a class="nav-link" href="{% url 'website:home' %}">
                     <i class="fas fa-reply"></i>
                     <span>Back to the site</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   href="/admin"
+                   target="_blank">
+                    <i class="fa fa-external-link"></i>
+                    <span>Django Administrator</span>
                 </a>
             </li>
         </ul>

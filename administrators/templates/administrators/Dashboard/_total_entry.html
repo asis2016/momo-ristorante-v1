@@ -1,0 +1,23 @@
+{% load administrators_tags %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="text-primary fw-bold m-0">
+            Total Entries (Stats)
+        </h6>
+    </div>
+    <div class="card-body">
+        {% model_entry_count as model_entry %}
+        {% for model in model_entry %}
+        <h4 class="small fw-bold">{{ model.model }}<span class="float-end">{{ model.total }}%</span></h4>
+        <div class="progress mb-4">
+            <div class="progress-bar bg-info"
+                 aria-valuenow={{ model.total }}
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 style="width: {{ model.total }}%;">
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
