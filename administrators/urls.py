@@ -14,7 +14,7 @@ from recipes.views import (DashboardRecipeCreateView,
                            DashboardRecipeDetailView,
                            DashboardRecipeUpdateView,
                            DashboardRecipeDeleteView)
-from .views import AdministratorDashboard
+from .views import AdministratorDashboard, HomepageSetting
 
 urlpatterns = [
 
@@ -37,5 +37,7 @@ urlpatterns = [
     path('recipe/<uuid:pk>/update/', DashboardRecipeUpdateView.as_view(), name='recipe_update'),
     path('recipe/<uuid:pk>/delete/', DashboardRecipeDeleteView.as_view(), name='recipe_delete'),
 
+    # Administrator
+    path('homepage/', HomepageSetting.as_view(), name='homepage_setting'),
     path('', AdministratorDashboard.as_view(), name='index')
 ]

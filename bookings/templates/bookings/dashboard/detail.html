@@ -17,10 +17,12 @@
 <!-- Breadcrumb -->
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'dashboard:index' %}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'dashboard:booking_list' %}">Blog</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard:index' %}">
+            Dashboard
+        </a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard:booking_list' %}">Booking</a></li>
         <li class="breadcrumb-item active" aria-current="page">
-            {{ booking.title }}
+            {{ booking.id }}
         </li>
     </ol>
 </nav>

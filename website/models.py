@@ -15,7 +15,7 @@ class Setting(models.Model):
     users_can_register = models.BooleanField(default=0)
     admin_email = models.CharField(max_length=100, default='admin@email.com')
     mailserver_url = models.CharField(max_length=200, blank=True)
-    mailserver_login = models.CharField(max_length=100,blank=True)
+    mailserver_login = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return f"{self.siteurl}"

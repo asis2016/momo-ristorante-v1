@@ -36,8 +36,8 @@ ENVIRONMENT=os.environ.get('ENVIRONMENT', default='development')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = int(os.environ.get('DEBUG', default=1))
-DEBUG = False
+DEBUG = int(os.environ.get('DEBUG', default=1))
+#DEBUG = False
 
 ALLOWED_HOSTS = ['momo-ristorante-v1.herokuapp.com', 'localhost', '127.0.0.1', '127.0.0.1:8000', '*']
 

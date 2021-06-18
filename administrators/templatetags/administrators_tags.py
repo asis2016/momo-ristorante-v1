@@ -12,7 +12,7 @@ def model_entry_count():
     blog_count = Blog.objects.all().count()
     recipe_count = Recipe.objects.all().count()
     booking_count = Booking.objects.all().count()
-    total = blog_count + recipe_count
+    total = blog_count + recipe_count + booking_count
     blog_count_percent = (blog_count / total) * 100
     recipe_count_percent = (recipe_count / total) * 100
     booking_count_percent = (booking_count / total) * 100
@@ -32,3 +32,11 @@ def model_entry_count():
         }
     ]
     return data
+
+
+@register.simple_tag
+def get_card():
+    html = """<ul>
+    <li>li</li>
+    </ul>"""
+    return html
