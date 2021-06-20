@@ -1,4 +1,4 @@
-def template(title, total, fa_icon):
+def quick_stat_helper_template(title, total, fa_icon):
     html = f"""<div class="col-md-6 col-xl-3 mb-4 quick-stat">
     <div class="card shadow border-start-success py-2">
     <div class="card-body">
@@ -12,7 +12,7 @@ def template(title, total, fa_icon):
     </div>
     </div>
     <div class="col-auto">
-    <i class="fas {fa_icon} fa-2x text-gray-300"></i>
+    <i class="{fa_icon} fa-2x text-gray-300"></i>
     </div>
     </div>
     </div>

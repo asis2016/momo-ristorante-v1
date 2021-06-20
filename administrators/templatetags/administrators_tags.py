@@ -1,4 +1,6 @@
 from django import template
+from helper.quick_stat_template import quick_stat_helper_template
+from helper.icon import Icon
 
 register = template.Library()
 
@@ -35,8 +37,39 @@ def model_entry_count():
 
 
 @register.simple_tag
-def get_card():
-    html = """<ul>
-    <li>li</li>
-    </ul>"""
+def blog_quick_stat():
+    """
+    Renders quick stat for Blog in Dashboard.
+    """
+    total = Blog.objects.count()
+    html = quick_stat_helper_template('Blog', total, Icon.BLOG.value)
+    return html
+
+
+@register.simple_tag
+def booking_quick_stat():
+    """
+    Renders quick stat for Booking in Dashboard.
+    """
+    total = Booking.objects.count()
+    html = quick_stat_helper_template('Booking', total, Icon.CALENDAR.value)
+    return html
+
+
+@register.simple_tag
+def comment_quick_stat():
+    """
+    Renders quick stat for comment in Dashboard.
+    """
+    html = quick_stat_helper_template('Comments', 20, Icon.COMMENT.value)
+    return html
+
+
+@register.simple_tag
+def recipe_quick_stat():
+    """
+    Renders quick stat for Recipe in Dashboard.
+    """
+    total = Recipe.objects.count()
+    html = quick_stat_helper_template('Recipe', total, Icon.RECIPE.value)
     return html

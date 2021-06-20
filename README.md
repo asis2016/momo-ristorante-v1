@@ -59,6 +59,11 @@ Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 - username: root
 - password: root
 
+## Installing PIP packages
+```bash
+  docker-compose exec web pipenv install docutils
+```
+
 ## Demo with Screenshots
 
 [home](https://momo-ristorante-v1.herokuapp.com/)

@@ -19,7 +19,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+                  # admin docs
+                  path('admin/doc/',include('django.contrib.admindocs.urls')),
                   path('admin/', admin.site.urls),
+                  
                   path('dashboard/', include(('administrators.urls', 'dashboard'), namespace='dashboard')),
                   path('', include(('website.urls', 'website'), namespace='website')),
 

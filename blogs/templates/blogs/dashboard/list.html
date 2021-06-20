@@ -69,7 +69,6 @@
                         <th>Excerpt</th>
                         <th>Author</th>
                         <th>Create date</th>
-                        <th>Modify date</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -89,7 +88,6 @@
                         <td>{{ post.excerpt|slice:":50"}}{{'...'}}</td>
                         <td>{{ post.author }}</td>
                         <td>{{ post.created }}</td>
-                        <td>{{ post.modified }}</td>
                         <!-- Actions -->
                         <td class="action">
                             <a href="{% url 'dashboard:blog_detail' post.id %}"
@@ -102,7 +100,6 @@
                                title="View on site"
                                target="_blank">
                                 <i class="fa fa-external-link"></i></a>
-
                         </td>
                     </tr>
                     {% endfor %}
@@ -113,7 +110,7 @@
                         <th>Excerpt</th>
                         <th>Author</th>
                         <th>Create date</th>
-                        <th>Modify date</th>
+                        <th>Action</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -131,13 +128,25 @@
                 <div class="col-md-6">
                     <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
                         <ul class="pagination">
-                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
-                                    aria-hidden="true">«</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
-                                    aria-hidden="true">»</span></a></li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

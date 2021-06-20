@@ -14,7 +14,9 @@ from core.models import TimeStampedModel
 
 
 class Booking(TimeStampedModel):
-    """ Booking model as of v.1.0 """
+    """
+    Booking model as of v.1.0
+    """
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
