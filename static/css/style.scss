@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+
 $bg_main: #f5f5ef;
 $color_primary: #a1d683;
 $color_primary_dark: #8ab86f;
@@ -5,6 +7,30 @@ $color_secondary: #50514f;
 $color_secondary_dark: #40413f;
 $color_text: #f5f5ef;
 $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
+$font_heading: 'Cardo';
+$font_text: 'Roboto';
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: $font_text, serif;
+  font-weight: 300;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font_heading, serif;
+  font-weight: 700;
+}
 
 .btn {
   border-radius: 0;
@@ -32,7 +58,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .lead {
-  font-family: "Roboto", serif;
+  font-family: $font_text, serif;
 }
 
 /* Header right after the navigation
@@ -92,7 +118,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 
     h1 {
       font-size: 5rem;
-      line-height: 5rem;
+      line-height: 7rem;
       letter-spacing: 0.1rem;
     }
 
@@ -134,7 +160,6 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   .navbar-brand {
     color: $color_primary;
     padding: 0.9rem 0;
-    font-family: "Pacifico", cursive;
     font-size: 1.8rem;
     font-weight: 100;
 
@@ -459,7 +484,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   form {
     label,
     ::-webkit-input-placeholder {
-      font-family: "Cardo", serif;
+      font-family: $font_text, serif;
     }
 
     .form-control {
@@ -545,7 +570,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     .brand {
-      font-family: "Cardo", serif;
+      font-family: $font_heading, serif;
       font-size: 1.5rem;
       font-weight: 700;
     }

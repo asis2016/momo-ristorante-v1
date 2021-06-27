@@ -29,10 +29,10 @@
             {% for recipe in latest_five_recipes %}
             <tr>
                 <td>
-                    {{ recipe.title }}
+                    {{ recipe.title|slice:":15" }}{{'..'}}
                 </td>
-                <td>
-                    {{ recipe.modified }}
+                <td style="width: 100px;">
+                    <small>{{ recipe.modified|date:"m-d-Y" }}</small>
                 </td>
             </tr>
             {% endfor %}

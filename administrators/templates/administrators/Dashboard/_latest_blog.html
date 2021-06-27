@@ -27,7 +27,10 @@
             {% for post in latest_five_blog %}
             <tr>
                 <td>
-                    {{ post.title }}
+                    {{ post.title|slice:":15" }}{{'..'}}
+                </td>
+                <td style="width: 100px;">
+                    <small>{{ post.modified|date:"m-d-Y" }}</small>
                 </td>
             </tr>
             {% endfor %}

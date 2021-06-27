@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cardo", serif;
+  font-weight: 700;
+}
+
 .btn {
   border-radius: 0;
   border-color: none;
@@ -72,7 +94,7 @@
   }
   .master-head h1 {
     font-size: 5rem;
-    line-height: 5rem;
+    line-height: 7rem;
     letter-spacing: 0.1rem;
   }
   .master-head h2 {
@@ -107,7 +129,6 @@
 #mainNav .navbar-brand {
   color: #a1d683;
   padding: 0.9rem 0;
-  font-family: "Pacifico", cursive;
   font-size: 1.8rem;
   font-weight: 100;
 }
@@ -386,7 +407,7 @@
 }
 .book-table form label,
 .book-table form ::-webkit-input-placeholder {
-  font-family: "Cardo", serif;
+  font-family: "Roboto", serif;
 }
 .book-table form .form-control {
   border-radius: 0;
