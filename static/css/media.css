@@ -1,0 +1,48 @@
+.section-featurette .featurette-image{
+    width: 500px;
+    height: 500px;
+}
+
+@media screen and (max-width: 991px) {
+  #mainNav{
+    background: #50514f;
+    -webkit-box-shadow: 0 1px 5px 0px rgb(0 0 0 / 20%);
+  }
+
+  .section-featurette .container .col-one{
+    padding-right: 15px;
+  }
+
+  .section-featurette .featurette-image{
+        object-fit: cover;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+    .section-featurette .container{
+         padding: 15px;
+    }
+
+    .featured-products-1 .item img{
+        object-fit: cover;
+        width: 100%;
+        object-position: center;
+    }
+
+    /* blog */
+    .blog-section .right-sidebar{
+        margin-top: 25px;
+    }
+
+    .blog-section .right-sidebar .right-sidebar-archives{
+        margin-top: 25px;
+        padding:0 !important;
+    }
+
+    /* about section */
+    .about-section .col-team-members{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}

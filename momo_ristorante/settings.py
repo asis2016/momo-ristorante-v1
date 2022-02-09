@@ -33,7 +33,8 @@ ENVIRONMENT=os.environ.get('ENVIRONMENT', default='development')
     #""" Get the secret variable. """
     #return secret[setting]
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-v34h48=*da_@x!pa)8w1u2x38o$a&yxi!9f(2@s@68+t%ds!t_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
@@ -71,6 +72,8 @@ INSTALLED_APPS = [
 
     # django admin docs
     'django.contrib.admindocs',
+
+
 ]
 
 MIDDLEWARE = [

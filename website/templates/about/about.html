@@ -29,10 +29,10 @@
     </div>
 </header>
 
-<section class="container py-5 common-container">
+<section class="container py-5 common-container about-section">
     <div class="row py-5">
         {% for post in posts %}
-        <div class="col-4">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-team-members">
             <img alt=""
                  class="bd-placeholder-img rounded-circle"
                  src="{% static 'images/'  %}{{ post.image }}"

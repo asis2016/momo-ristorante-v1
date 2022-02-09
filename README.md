@@ -33,12 +33,16 @@ Go to the project directory
 
 Start the project
 
-```bash
-  docker build .
+```
+# docker build .
 ```
 
-```bash
-  docker-compose up -f docker-compose.yml -d
+```
+$ docker-compose --version
+```
+
+```
+# docker-compose up -f docker-compose.yml -d
 ```
 
 ## Running Tests
@@ -46,7 +50,7 @@ Start the project
 To run tests, run the following command
 
 ```bash
-  docker-compose exec web python manage.py test
+docker-compose exec web python manage.py test
 ```
 
 ## Running the project locally
