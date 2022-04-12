@@ -2,6 +2,7 @@ from core.validators import validate_blog
 from django.db import models
 from django.contrib.auth import get_user_model
 
+
 class Authorable(models.Model):
     """
     An abstract base class model that provides self-author ``author`` field.

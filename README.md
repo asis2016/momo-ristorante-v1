@@ -2,21 +2,25 @@
 
 Mo:mo: Ristorante is a modern and responsive Bootstrap 4 restaurant website template made in Django framework.
 
-# Demo
+## Demo
 
 [https://momo-ristorante-v1.herokuapp.com/](https://momo-ristorante-v1.herokuapp.com/)
 
-# Tech Stack
+## Tech Stack
 
-Docker 20.10.6, Python 3.8, Django 3.2.3, Whitenoise, Gunicorn, Heroku
+- HTML5/ CSS3, JavaScript, SASS
+- Django 3.2.3, Python 3.8
+- Whitenoise, Gunicorn, Heroku, Docker 20.10.6
 
-# Environment Variables
+## Environment Variables
 
 To run this project, you will need to add the following environment variables:
 
 `SECRET_KEY` `django-insecure-v34h48=*da_@x!pa)8w1u2x38o$a&yxi!9f(2@s@68+t%ds!t_`
 
-# Run Locally
+## Installation
+
+### Run Locally
 
 Clone the project
 
@@ -44,7 +48,26 @@ $ docker-compose --version
 # docker-compose up -f docker-compose.yml -d
 ```
 
-# Running Tests
+### Installing PIP packages
+
+```bash
+  docker-compose exec web pipenv install docutils
+```
+
+## Usage
+
+### Up and running
+
+Goto [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Django Administration
+
+Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+
+- username: root
+- password: root
+
+### Running tests
 
 To run tests, run the following command
 
@@ -52,22 +75,7 @@ To run tests, run the following command
 docker-compose exec web python manage.py test
 ```
 
-# Running the project locally
-
-Goto [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-## Running Django Administration
-
-Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
-
-- username: root
-- password: root
-
-## Installing PIP packages
-
-```bash
-  docker-compose exec web pipenv install docutils
-```
+# Database diagram
 
 ## "Features"
 
@@ -88,3 +96,11 @@ Goto [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 ## Feedback
 
 If you have any feedback, please reach out to us at dev@asm.com.np
+
+## Contributing
+
+Contributions are always welcome! please contact us at dev@asm.com.np
+
+## License
+
+[MIT (./LICENSE)](./LICENSE)
